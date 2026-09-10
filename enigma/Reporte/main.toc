@@ -1,0 +1,9 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Objetivo}{3}{section.1}%
+\contentsline {section}{\numberline {2}Descripción del sistema}{3}{section.2}%
+\contentsline {section}{\numberline {3}Componentes y configuración}{3}{section.3}%
+\contentsline {section}{\numberline {4}Modelo matemático del cifrado}{4}{section.4}%
+\contentsline {section}{\numberline {5}Avance de rotores y doble paso}{5}{section.5}%
+\contentsline {section}{\numberline {6}Propiedades criptográficas y limitaciones}{5}{section.6}%
+\contentsline {section}{\numberline {7}Conclusión}{6}{section.7}%
+\contentsline {section}{Referencias}{6}{section*.3}%

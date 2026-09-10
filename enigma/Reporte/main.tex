@@ -1,0 +1,152 @@
+\documentclass[letterpaper,12pt]{article}
+
+% --- PAQUETES DE IDIOMA ---
+\usepackage[spanish,mexico]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[T1]{fontenc}
+
+% --- PAQUETES MATEMÁTICOS ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{mathrsfs}
+
+% --- PAQUETES GRÁFICOS Y DE DISEÑO ---
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage[table]{xcolor}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing,positioning}
+
+% --- DIBUJAR CIRCUITOS ---
+\usepackage{circuitikz}
+\usetikzlibrary{shapes.geometric,shapes.multipart,shapes.symbols,arrows.meta,calc,shadows,babel}
+\usepackage{karnaugh-map}
+
+% --- LISTAS Y CÓDIGO ---
+\usepackage{enumitem}
+\usepackage{listings}
+\definecolor{codebg}{rgb}{0.95,0.95,0.95}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+\lstset{backgroundcolor=\color{backcolour},inputencoding=utf8,keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color{codepurple},commentstyle=\color{codegray}\itshape,numbers=left,
+  numberstyle=\tiny\color{codegray},frame=single,rulecolor=\color{black},breaklines=true,
+  tabsize=4,showstringspaces=false,extendedchars=true}
+
+% --- RUTAS DE IMÁGENES Y PÁGINA ---
+\graphicspath{{img/}{portada_img/}}
+\usepackage[left=25mm,right=25mm,top=35mm,bottom=30mm,headheight=15pt,papersize={21.59cm,27.94cm}]{geometry}
+\renewcommand{\baselinestretch}{1.25}
+\usepackage{parskip}
+
+% --- ENCABEZADOS Y PIES ---
+\newcommand{\materia}{Criptografía}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\textsc{\materia}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% --- BIBLIOGRAFÍA E HIPERVÍNCULOS ---
+\usepackage[backend=biber,style=numeric,sorting=none,url=true]{biblatex}
+\addbibresource{referencias.bib}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=magenta,urlcolor=cyan}
+
+\begin{document}
+\input{portada.tex}
+\newpage
+\tableofcontents
+\newpage
+
+\section{Objetivo}
+Explicar el funcionamiento técnico de la máquina Enigma como sistema criptográfico electromecánico: sus componentes, la transformación de una letra, el avance de los rotores y las propiedades que resultan de su diseño.
+
+\section{Descripción del sistema}
+Enigma es una máquina de sustitución polialfabética. No emplea una tabla fija: cada pulsación configura un circuito eléctrico distinto, por lo que una misma letra puede cifrarse de formas diferentes a lo largo del mensaje. El modelo militar de tres rotores puede describirse como un conjunto de permutaciones del alfabeto de 26 símbolos \cite{friedman-enigma,friedman-lectures}.
+
+Al pulsar una tecla se cierra un circuito alimentado por una batería. La corriente recorre los módulos de cifrado y enciende una lámpara; la letra iluminada es el criptograma. Antes de recorrer el circuito, el rotor derecho avanza una posición. Esta secuencia de \emph{avance y después cifrado} es esencial para reproducir correctamente la máquina \cite{friedman-enigma}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Stealth,node distance=5mm,every node/.style={font=\small},
+ bloque/.style={draw,rounded corners,align=center,minimum height=9mm,minimum width=18mm,fill=blue!7},
+ ref/.style={draw,rounded corners,align=center,minimum height=9mm,minimum width=18mm,fill=orange!15},
+ flecha/.style={->,semithick}]
+ \node[bloque] (tecla) {Teclado};
+ \node[bloque,right=of tecla] (plug1) {Panel de\\conexiones};
+ \node[bloque,right=of plug1] (etw1) {Rueda de\\entrada};
+ \node[bloque,right=of etw1] (rot1) {Rotores\\R--M--L};
+ \node[ref,right=of rot1] (ukw) {Reflector};
+ \node[bloque,below=12mm of rot1] (rot2) {Rotores\\L--M--R};
+ \node[bloque,left=of rot2] (etw2) {Rueda de\\entrada};
+ \node[bloque,left=of etw2] (plug2) {Panel de\\conexiones};
+ \node[bloque,left=of plug2] (lamp) {Panel de\\lámparas};
+ \draw[flecha] (tecla)--(plug1)--(etw1)--(rot1)--(ukw);
+ \draw[flecha] (ukw.south) |- (rot2.east);
+ \draw[flecha] (rot2)--(etw2)--(plug2)--(lamp);
+\end{tikzpicture}
+\caption{Trayectoria eléctrica de una pulsación. R, M y L designan los rotores derecho, medio e izquierdo.}
+\label{fig:trayectoria}
+\end{figure}
+
+\section{Componentes y configuración}
+\begin{description}[style=nextline,leftmargin=35mm,font=\normalfont\bfseries]
+  \item[Teclado y lámparas] El teclado selecciona una de las 26 líneas de entrada; la lámpara indica la línea de salida. No almacenan información criptográfica.
+  \item[Panel de conexiones] También llamado \emph{plugboard} o \emph{Steckerbrett}. Intercambia por pares algunas letras antes y después de los rotores. Matemáticamente es una involución: aplicarlo dos veces devuelve la letra original.
+  \item[Rueda de entrada] Conecta el panel con el primer rotor. Se modela como una permutación fija y no realiza avance.
+  \item[Rotores] Cada rotor contiene 26 contactos por lado y cables internos que realizan una permutación fija. Al girar cambia qué contacto externo coincide con cada terminal de la máquina; por ello, su permutación efectiva depende de la posición \cite{friedman-lectures}.
+  \item[Reflector] Une los contactos en pares y devuelve la corriente por los rotores en sentido inverso. Es una involución sin puntos fijos: ningún contacto se conecta consigo mismo \cite{friedman-lectures}.
+\end{description}
+
+La clave de operación de una Enigma M3 incluye el orden de los rotores, las posiciones iniciales visibles en las ventanas, la posición de anillo (\emph{Ringstellung}) y las parejas del panel de conexiones. El anillo desplaza el alfabeto impreso respecto al núcleo cableado; por tanto modifica la permutación efectiva y la letra visible en que ocurre el arrastre del rotor siguiente \cite{cornell-enigma}.
+
+\section{Modelo matemático del cifrado}
+Se identifica cada letra con un elemento de $\mathbb{Z}_{26}=\{0,\ldots,25\}$. Un rotor se representa mediante una permutación $f$. Si $p$ es su posición y $r$ su ajuste de anillo, ambos módulo 26, el paso de derecha a izquierda es
+\[
+  \rho_{f,p,r}(x)=f(x+p-r)-p+r \pmod {26}.
+\]
+El retorno por ese rotor usa $\rho_{f,p,r}^{-1}$. Esta expresión distingue el cableado invariable $f$ de los desplazamientos mecánicos $p$ y $r$.
+
+Sea $P$ el panel de conexiones, $E$ la rueda de entrada, $\rho_R,\rho_M,\rho_L$ los rotores en sus posiciones actuales y $U$ el reflector. Con la convención de que la función a la derecha se aplica primero, el cifrado completo es
+\[
+C=P\circ E^{-1}\circ\rho_L^{-1}\circ\rho_M^{-1}\circ\rho_R^{-1}\circ U
+  \circ\rho_L\circ\rho_M\circ\rho_R\circ E\circ P.
+\]
+Para descifrar no se requiere una clave inversa: se configura otra máquina con los mismos parámetros y se vuelve a pulsar el criptograma. Como $P$ y $U$ son involuciones y el retorno usa las inversas de los rotores, se cumple $C^{-1}=C$ para una posición fija \cite{friedman-enigma}.
+
+\section{Avance de rotores y doble paso}
+Los rotores no se mueven como un contador ordinario de base 26. Antes de cada cifrado el rotor derecho avanza una posición. Un trinquete y una muesca permiten que, al alcanzar ciertas posiciones, un rotor arrastre al situado a su izquierda. En un sistema de tres rotores, el izquierdo avanza sólo cuando el medio está en su muesca; el derecho avanza siempre \cite{hamer-double}.
+
+El rotor central presenta el \emph{doble paso}. Si el rotor derecho está en su muesca, en la siguiente pulsación avanzan derecho y medio. Si entonces el medio queda en su propia muesca, la pulsación posterior hace avanzar los tres rotores. El rotor medio avanza así en dos pulsaciones consecutivas. Es una consecuencia de las palancas y muescas, no una regla añadida al algoritmo \cite{hamer-double}.
+
+Una simulación debe evaluar las muescas antes de modificar las posiciones y aplicar los avances simultáneamente:
+\begin{lstlisting}[language={},caption={Actualización previa al cifrado.},label={lst:avance}]
+medio_avanza    <- muesca(rotor_derecho) OR muesca(rotor_medio)
+izquierdo_avanza <- muesca(rotor_medio)
+avanzar(rotor_derecho)
+si medio_avanza: avanzar(rotor_medio)
+si izquierdo_avanza: avanzar(rotor_izquierdo)
+\end{lstlisting}
+
+\section{Propiedades criptográficas y limitaciones}
+El reflector permite que el mismo montaje sirva para cifrar y descifrar, pero impone restricciones. Ninguna letra puede cifrarse como ella misma: si $C(x)=x$, la conjugación de las permutaciones alrededor del reflector implicaría un punto fijo en $U$, contrario a su cableado por pares \cite{friedman-lectures}. Para una posición de rotores fija el cifrado también es recíproco: si $C(x)=y$, entonces $C(y)=x$.
+
+Estas propiedades no revelan por sí solas el texto, pero reducen el espacio de búsqueda de una configuración y permiten descartar hipótesis incompatibles. El avance añade variación por carácter, aunque sigue una secuencia determinista y periódica; no es una fuente de aleatoriedad. Enigma combina permutaciones y estado mecánico, pero no incorpora difusión sobre bloques ni claves de longitud comparable con los cifrados modernos. Su seguridad dependía del secreto de la configuración diaria y del procedimiento de uso, además de su complejidad electromecánica \cite{miller-enigma}.
+
+\section{Conclusión}
+Enigma se analiza con precisión como una composición de permutaciones dependientes de estado. Los rotores implementan sustituciones cableadas, sus posiciones introducen desplazamientos, el panel agrega otra involución y el reflector invierte el trayecto eléctrico. Los trinquetes modifican el estado antes de cada letra y producen el doble paso del rotor central. Esta descripción explica el cifrado y descifrado con la misma configuración, así como restricciones como la imposibilidad de cifrar una letra en sí misma.
+
+{\footnotesize\emergencystretch=3em\printbibliography[heading=bibintoc,title={Referencias}]}
+\end{document}

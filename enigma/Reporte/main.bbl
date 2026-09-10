@@ -1,0 +1,200 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{friedman-enigma}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=1b6ef4e2db3ff4f06dcc6dcec3165ffd}{%
+           family={Friedman},
+           familyi={F\bibinitperiod},
+           given={William\bibnamedelima F.},
+           giveni={W\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {National Security Agency}%
+      }
+      \strng{namehash}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{fullhash}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{fullhashraw}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{bibnamehash}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{authorbibnamehash}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{authornamehash}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{authorfullhash}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{authorfullhashraw}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Documento desclasificado, ref. A62837}
+      \field{title}{Introduction to Cryptology--VI}
+      \field{urlday}{10}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/friedman-documents/lectures-speeches/FOLDER_179/41758629079776.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/friedman-documents/lectures-speeches/FOLDER_179/41758629079776.pdf
+      \endverb
+    \endentry
+    \entry{friedman-lectures}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=1b6ef4e2db3ff4f06dcc6dcec3165ffd}{%
+           family={Friedman},
+           familyi={F\bibinitperiod},
+           given={William\bibnamedelima F.},
+           giveni={W\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {National Security Agency}%
+      }
+      \strng{namehash}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{fullhash}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{fullhashraw}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{bibnamehash}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{authorbibnamehash}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{authornamehash}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{authorfullhash}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \strng{authorfullhashraw}{1b6ef4e2db3ff4f06dcc6dcec3165ffd}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Documento desclasificado}
+      \field{title}{The Friedman Lectures}
+      \field{urlday}{10}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.nsa.gov/Portals/75/documents/news-features/declassified-documents/friedman-documents/lectures-speeches/FOLDER_166/41759739079888.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.nsa.gov/Portals/75/documents/news-features/declassified-documents/friedman-documents/lectures-speeches/FOLDER_166/41759739079888.pdf
+      \endverb
+    \endentry
+    \entry{cornell-enigma}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=0d4dfbf1232b9d4506ee5363776db339}{%
+           family={{Cornell University}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {CS 3110, Cornell University}%
+      }
+      \strng{namehash}{0d4dfbf1232b9d4506ee5363776db339}
+      \strng{fullhash}{0d4dfbf1232b9d4506ee5363776db339}
+      \strng{fullhashraw}{0d4dfbf1232b9d4506ee5363776db339}
+      \strng{bibnamehash}{0d4dfbf1232b9d4506ee5363776db339}
+      \strng{authorbibnamehash}{0d4dfbf1232b9d4506ee5363776db339}
+      \strng{authornamehash}{0d4dfbf1232b9d4506ee5363776db339}
+      \strng{authorfullhash}{0d4dfbf1232b9d4506ee5363776db339}
+      \strng{authorfullhashraw}{0d4dfbf1232b9d4506ee5363776db339}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A1: Enigma}
+      \field{urlday}{10}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.cs.cornell.edu/courses/cs3110/2019fa/a1/
+      \endverb
+      \verb{url}
+      \verb https://www.cs.cornell.edu/courses/cs3110/2019fa/a1/
+      \endverb
+    \endentry
+    \entry{hamer-double}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=2d999059b9cf2e9ff865401b4b431b50}{%
+           family={Hamer},
+           familyi={H\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{2d999059b9cf2e9ff865401b4b431b50}
+      \strng{fullhash}{2d999059b9cf2e9ff865401b4b431b50}
+      \strng{fullhashraw}{2d999059b9cf2e9ff865401b4b431b50}
+      \strng{bibnamehash}{2d999059b9cf2e9ff865401b4b431b50}
+      \strng{authorbibnamehash}{2d999059b9cf2e9ff865401b4b431b50}
+      \strng{authornamehash}{2d999059b9cf2e9ff865401b4b431b50}
+      \strng{authorfullhash}{2d999059b9cf2e9ff865401b4b431b50}
+      \strng{authorfullhashraw}{2d999059b9cf2e9ff865401b4b431b50}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cryptologia}
+      \field{title}{Enigma: Actions Involved in the ``Double Stepping'' of the Middle Rotor}
+      \field{urlday}{10}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.cryptomuseum.com/people/hamer/files/double_stepping.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.cryptomuseum.com/people/hamer/files/double_stepping.pdf
+      \endverb
+    \endentry
+    \entry{miller-enigma}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=f94633e8419bf2388841b95e3058fdbd}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={William\bibnamedelima E.},
+           giveni={W\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {National Security Agency}%
+      }
+      \strng{namehash}{f94633e8419bf2388841b95e3058fdbd}
+      \strng{fullhash}{f94633e8419bf2388841b95e3058fdbd}
+      \strng{fullhashraw}{f94633e8419bf2388841b95e3058fdbd}
+      \strng{bibnamehash}{f94633e8419bf2388841b95e3058fdbd}
+      \strng{authorbibnamehash}{f94633e8419bf2388841b95e3058fdbd}
+      \strng{authornamehash}{f94633e8419bf2388841b95e3058fdbd}
+      \strng{authorfullhash}{f94633e8419bf2388841b95e3058fdbd}
+      \strng{authorfullhashraw}{f94633e8419bf2388841b95e3058fdbd}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Cryptographic Mathematics of Enigma}
+      \field{urlday}{10}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.nsa.gov/portals/75/documents/about/cryptologic-heritage/historical-figures-publications/publications/wwii/CryptoMathEnigma_Miller.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.nsa.gov/portals/75/documents/about/cryptologic-heritage/historical-figures-publications/publications/wwii/CryptoMathEnigma_Miller.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
