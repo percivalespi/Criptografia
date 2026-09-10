@@ -1,0 +1,9 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Explicación del Método}{2}{section.1}%
+\contentsline {section}{\numberline {2}Implementación en Python}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Generación del anillo móvil}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Función de cifrado}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Función de descifrado}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Pruebas del Programa}{4}{section.3}%
+\contentsline {section}{\numberline {4}Repositorio}{8}{section.4}%
+\contentsline {section}{\numberline {5}Conclusión}{8}{section.5}%
